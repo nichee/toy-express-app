@@ -18,13 +18,13 @@ USE `test_schema`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `company`
+-- Table structure for table `companies`
 --
 
-DROP TABLE IF EXISTS `company`;
+DROP TABLE IF EXISTS `companies`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `company` (
+CREATE TABLE `companies` (
   `id` int NOT NULL AUTO_INCREMENT,
   `company_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -35,13 +35,13 @@ CREATE TABLE `company` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `company`
+-- Dumping data for table `companies`
 --
 
-LOCK TABLES `company` WRITE;
-/*!40000 ALTER TABLE `company` DISABLE KEYS */;
-INSERT INTO `company` VALUES (1,'govtech','gt@tech.gov.sg','abcdefg','2026-01-07 17:03:57'),(2,'dsta','dsta@tech.gov.sg','abcdefg','2026-01-08 06:02:38'),(3,'dso','dso@tech.gov.sg','abcdefg','2026-01-08 06:03:01');
-/*!40000 ALTER TABLE `company` ENABLE KEYS */;
+LOCK TABLES `companies` WRITE;
+/*!40000 ALTER TABLE `companies` DISABLE KEYS */;
+INSERT INTO `companies` VALUES (1,'govtech','gt@tech.gov.sg','abcdefg','2026-01-07 17:03:57'),(2,'dsta','dsta@tech.gov.sg','abcdefg','2026-01-08 06:02:38'),(3,'dso','dso@tech.gov.sg','abcdefg','2026-01-08 06:03:01');
+/*!40000 ALTER TABLE `companies` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-01-08 14:07:50
+-- Dump completed on 2026-01-08 15:06:02

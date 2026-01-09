@@ -85,6 +85,51 @@ export async function loginCompany(email, password) {
     };
 }
 
+export async function updateCompany(id, company_name) {
+    const [result] = await pool.query(`
+        UPDATE companies 
+        SET company_name = ?
+        WHERE id = ?
+    `, [company_name, id]);
+    return result;
+}
+
+export async function getProduct(id) {
+    const [rows] = await pool.query(`
+        SELECT * FROM products WHERE id = ?
+    `, [id]);
+    return rows[0];
+}
+
+export async function deleteProduct(id) {
+    const [result] = await pool.query(`
+        DELETE FROM products WHERE id = ?
+    `, [id]);
+    return result;
+}
+
+export async function getProductsPaginated(limit, offset) {
+    const [rows] = await pool.query(`
+        SELECT * FROM products 
+        LIMIT ? OFFSET ?
+    `, [limit, offset]);
+    return rows;
+}
+
+export async function getProductsCount() {
+    const [rows] = await pool.query(`
+        SELECT COUNT(*) as total FROM products
+    `);
+    return rows[0].total;
+}
+
+export async function searchProducts(query) {
+    const [rows] = await pool.query(`
+        SELECT * FROM products 
+        WHERE product_name LIKE ?
+    `, [`%${query}%`]);
+    return rows;
+}
 
 // export {getCompanies, getCompany, createCompany} // this is a either/or situation - either named export or export at bottom
 // createCompany("apple", "apple@gmail.com", "password");
